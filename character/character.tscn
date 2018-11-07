@@ -3,12 +3,12 @@
 [ext_resource path="res://character/character.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 60, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -19,6 +19,7 @@ position = Vector2( 0, -32 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 mass = 50
+max_speed = 200
 player_name = "p1"
 
 [node name="Head" type="Node2D" parent="." index="0"]
@@ -51,7 +52,7 @@ _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/RightArm/Hitbox" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 disabled = true
 
 [node name="Sprite" type="Sprite" parent="Torso" index="2"]
@@ -75,7 +76,7 @@ _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Hurtbox" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Pushbox" type="Area2D" parent="Torso" index="4"]
 
@@ -91,7 +92,7 @@ _sections_unfolded = [ "Collision", "Pickable" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Pushbox" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Legs" type="Node2D" parent="." index="2"]
 
