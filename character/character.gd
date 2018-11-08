@@ -6,7 +6,7 @@ onready var pushbox = $Torso/Pushbox
 #onready var right_attack = $Torso/RightArm/Hitbox/CollisionShape2D
 
 var mass
-var max_speed = 200
+var max_speed
 var shielding
 var speed
 
@@ -14,7 +14,9 @@ var speed
 #var right_attack_timer = 0
 
 func _ready():
-	mass = $Torso.mass
+	mass = $Torso.mass + $Torso/LeftArm/Arm.mass + $Torso/RightArm/Arm.mass +\
+			$Torso/Leg/Legs.mass
+	max_speed = $Torso/Leg/Legs.speed / mass
 	position.y -= $Torso/Leg.position.y + $Torso/Leg/Legs/Ground.position.y
 
 
@@ -27,12 +29,11 @@ func _physics_process(delta):
 	
 	shielding = Input.is_action_pressed(player_name + "_shield")
 	
+	speed = 0
 	if Input.is_action_pressed(player_name + "_left") and not shielding:
-		speed = -max_speed
-	elif Input.is_action_pressed(player_name + "_right") and not shielding:
-		speed = max_speed
-	else:
-		speed = 0
+		speed -= max_speed
+	if Input.is_action_pressed(player_name + "_right") and not shielding:
+		speed += max_speed
 	
 	var final_speed = speed
 	

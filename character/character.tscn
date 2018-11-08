@@ -7,7 +7,7 @@
 [ext_resource path="res://character/parts/arms/test_arm/test_arm_right.tscn" type="PackedScene" id=5]
 [ext_resource path="res://character/parts/legs/test_legs/test_legs.tscn" type="PackedScene" id=6]
 
-[node name="Character" type="Node2D" index="0"]
+[node name="Character" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -30,10 +30,6 @@ editor/display_folded = true
 
 [node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 3 )]
 
-[node name="LeftArm" parent="Torso" index="4"]
-
-editor/display_folded = true
-
 [node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 4 )]
 
 [node name="RightArm" parent="Torso" index="5"]
@@ -41,6 +37,10 @@ editor/display_folded = true
 editor/display_folded = true
 
 [node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 5 )]
+
+[node name="Leg" parent="Torso" index="6"]
+
+editor/display_folded = true
 
 [node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 6 )]
 
