@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Legs" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+[node name="Ground" type="Position2D" parent="." index="1"]
+
+

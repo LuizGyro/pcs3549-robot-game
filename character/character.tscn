@@ -1,99 +1,48 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 60, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 32, 32 )
+[ext_resource path="res://character/parts/torsos/test_torso/test_torso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character/parts/heads/test_head/test_head.tscn" type="PackedScene" id=3]
+[ext_resource path="res://character/parts/arms/test_arm/test_arm_left.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/parts/arms/test_arm/test_arm_right.tscn" type="PackedScene" id=5]
+[ext_resource path="res://character/parts/legs/test_legs/test_legs.tscn" type="PackedScene" id=6]
 
 [node name="Character" type="Node2D" index="0"]
 
-position = Vector2( 0, -32 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-mass = 50
-max_speed = 200
 player_name = "p1"
 
-[node name="Head" type="Node2D" parent="." index="0"]
+[node name="Torso" parent="." index="0" instance=ExtResource( 2 )]
 
-_sections_unfolded = [ "Transform" ]
+[node name="Hurtbox" parent="Torso" index="0"]
 
-[node name="Torso" type="Node2D" parent="." index="1"]
+visible = false
 
-_sections_unfolded = [ "Transform" ]
+[node name="Pushbox" parent="Torso" index="1"]
 
-[node name="LeftArm" type="Node2D" parent="Torso" index="0"]
+visible = false
+character_path = NodePath("../..")
 
-[node name="RightArm" type="Node2D" parent="Torso" index="1"]
-
-position = Vector2( 40, 0 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Hitbox" type="Area2D" parent="Torso/RightArm" index="0"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 4
-collision_mask = 2
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Pickable" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/RightArm/Hitbox" index="0"]
-
-shape = SubResource( 1 )
-disabled = true
-
-[node name="Sprite" type="Sprite" parent="Torso" index="2"]
-
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Hurtbox" type="Area2D" parent="Torso" index="3"]
+[node name="Head" parent="Torso" index="3"]
 
 editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 2
-collision_mask = 0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Pickable" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Hurtbox" index="0"]
+[node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 3 )]
 
-shape = SubResource( 2 )
-
-[node name="Pushbox" type="Area2D" parent="Torso" index="4"]
+[node name="LeftArm" parent="Torso" index="4"]
 
 editor/display_folded = true
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Collision", "Pickable" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Torso/Pushbox" index="0"]
+[node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 4 )]
 
-shape = SubResource( 2 )
+[node name="RightArm" parent="Torso" index="5"]
 
-[node name="Legs" type="Node2D" parent="." index="2"]
+editor/display_folded = true
+
+[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 5 )]
+
+[node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 6 )]
 
 
+[editable path="Torso"]

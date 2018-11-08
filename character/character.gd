@@ -1,31 +1,31 @@
 extends Node2D
 
-export var mass = 50
-export var max_speed = 200
 export var player_name = "p1"
 
 onready var pushbox = $Torso/Pushbox
-onready var right_attack = $Torso/RightArm/Hitbox/CollisionShape2D
+#onready var right_attack = $Torso/RightArm/Hitbox/CollisionShape2D
 
+var mass
+var max_speed = 200
 var shielding
-var speed = 0
+var speed
 
-var right_attack_duration = .2
-var right_attack_timer = 0
+#var right_attack_duration = .2
+#var right_attack_timer = 0
 
 func _ready():
-	pass
+	mass = $Torso.mass
+	position.y -= $Torso/Leg.position.y + $Torso/Leg/Legs/Ground.position.y
 
 
 func _physics_process(delta):
-	if !right_attack.disabled:
-		right_attack_timer += delta
-	if right_attack_timer >= right_attack_duration:
-		right_attack.disabled = true
-		right_attack_timer = 0
+#	if !right_attack.disabled:
+#		right_attack_timer += delta
+#	if right_attack_timer >= right_attack_duration:
+#		right_attack.disabled = true
+#		right_attack_timer = 0
 	
-	if Input.is_action_pressed(player_name + "_shield"):
-		shielding = true
+	shielding = Input.is_action_pressed(player_name + "_shield")
 	
 	if Input.is_action_pressed(player_name + "_left") and not shielding:
 		speed = -max_speed
@@ -37,7 +37,7 @@ func _physics_process(delta):
 	var final_speed = speed
 	
 	if pushbox.get_overlapping_areas():
-		var other = pushbox.get_overlapping_areas()[0].get_parent().get_parent() # Consertar essa gambiarra depois
+		var other = pushbox.get_overlapping_areas()[0].character
 		var delta_x = other.position.x - position.x
 		
 		var v1
@@ -56,7 +56,13 @@ func _physics_process(delta):
 	
 	position.x += final_speed * delta
 	
-	if Input.is_action_just_pressed(player_name + "_attack") and\
-			right_attack.disabled:
-		right_attack.disabled = false
+#	if Input.is_action_just_pressed(player_name + "_attack") and\
+#			right_attack.disabled:
+#		right_attack.disabled = false
 
+
+func _on_Hurtbox_area_entered(area):
+	if self.is_a_parent_of(area):
+		return
+	
+	print("attacked")
