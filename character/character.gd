@@ -63,9 +63,10 @@ func _physics_process(delta):
         $Torso/RightArm/Arm/AnimationPlayer.play("attack")
 
 
-func _on_Hurtbox_area_entered(area):
+func _on_Hurtbox_area_entered(area, part):
 	if self.is_a_parent_of(area):
 		return
-	
-
-	emit_signal("hp_modified", ($Torso.hp / $Torso.max_hp)*100, player_name, "Torso")
+	get_node(str(part)).hp -= 10
+	print(float($Torso.hp) / $Torso.max_hp)
+	#var part = area.part
+	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")

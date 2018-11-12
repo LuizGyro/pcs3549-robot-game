@@ -58,7 +58,7 @@ position = Vector2( 81.1809, 148.902 )
 
 [node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 5 )]
 
-[connection signal="area_entered" from="Torso/Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Torso/Hurtbox" to="." method="_on_Hurtbox_area_entered" binds= [ "Torso" ]]
 
 
 [editable path="Torso"]
