@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
 [ext_resource path="res://character/parts/torsos/test_torso/test_torso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://character/parts/heads/test_head/test_head.tscn" type="PackedScene" id=3]
-[ext_resource path="res://character/parts/arms/test_arm/test_arm_left.tscn" type="PackedScene" id=4]
-[ext_resource path="res://character/parts/arms/test_arm/test_arm_right.tscn" type="PackedScene" id=5]
-[ext_resource path="res://character/parts/legs/test_legs/test_legs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Graphics/Placeholders/Torso.png" type="Texture" id=3]
+[ext_resource path="res://character/parts/heads/test_head/test_head.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/parts/arms/test_arm/test_arm_left.tscn" type="PackedScene" id=5]
+[ext_resource path="res://character/parts/arms/test_arm/test_arm_right.tscn" type="PackedScene" id=6]
+[ext_resource path="res://character/parts/legs/test_legs/test_legs.tscn" type="PackedScene" id=7]
 
 [node name="Character" type="Node2D"]
 
@@ -17,6 +18,7 @@ player_name = "p1"
 
 [node name="Hurtbox" parent="Torso" index="0"]
 
+editor/display_folded = false
 visible = false
 
 [node name="Pushbox" parent="Torso" index="1"]
@@ -24,25 +26,40 @@ visible = false
 visible = false
 character_path = NodePath("../..")
 
+[node name="Sprite" parent="Torso" index="2"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
 [node name="Head" parent="Torso" index="3"]
 
 editor/display_folded = true
+position = Vector2( 15, -110.739 )
 
-[node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 3 )]
+[node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 4 )]
 
-[node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 4 )]
+position = Vector2( 0, -38.1264 )
+
+[node name="LeftArm" parent="Torso" index="4"]
+
+editor/display_folded = true
+position = Vector2( 48.6396, -73.532 )
+
+[node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 5 )]
 
 [node name="RightArm" parent="Torso" index="5"]
 
 editor/display_folded = true
+position = Vector2( 94.677, -54.9641 )
 
-[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 5 )]
+[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 6 )]
 
 [node name="Leg" parent="Torso" index="6"]
 
 editor/display_folded = true
+position = Vector2( 81.1809, 148.902 )
 
-[node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 6 )]
+[node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 7 )]
 
 
 [editable path="Torso"]

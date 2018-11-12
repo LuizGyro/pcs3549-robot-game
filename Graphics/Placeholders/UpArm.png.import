@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test_torso.png-471e82a885461a08a926bdc7f451be33.stex"
+path="res://.import/UpArm.png-609633904cff7300f243d2fe75266ddd.stex"
 
 [deps]
 
-source_file="res://character/parts/torsos/test_torso/test_torso.png"
-source_md5="0b0d7e0aa19e5693f60e9632548748ca"
+source_file="res://Graphics/Placeholders/UpArm.png"
+source_md5="1893e66de4a3a994c3672297e2b8d546"
 
-dest_files=[ "res://.import/test_torso.png-471e82a885461a08a926bdc7f451be33.stex" ]
-dest_md5="00884d51d9d01f610ee31547bc91ec1f"
+dest_files=[ "res://.import/UpArm.png-609633904cff7300f243d2fe75266ddd.stex" ]
+dest_md5="d84bfa63fd9a61af454f9d7349641066"
 
 [params]
 

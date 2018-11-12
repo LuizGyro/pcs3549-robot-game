@@ -7,7 +7,10 @@ path="res://.import/test_arm_right.png-7966c38914015e9d671c1a1490015dc2.stex"
 [deps]
 
 source_file="res://character/parts/arms/test_arm/test_arm_right.png"
+source_md5="973536cd11809d659afe4128c1c28a0d"
+
 dest_files=[ "res://.import/test_arm_right.png-7966c38914015e9d671c1a1490015dc2.stex" ]
+dest_md5="e6fc9b7cc232aa269f7bde7c066f0e62"
 
 [params]
 

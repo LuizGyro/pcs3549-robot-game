@@ -7,7 +7,10 @@ path="res://.import/Title.jpeg-a73b7673089684a065947d6677a10ba2.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/Title.jpeg"
+source_md5="0dc12bcc8013555abe87e83e90d9c8cb"
+
 dest_files=[ "res://.import/Title.jpeg-a73b7673089684a065947d6677a10ba2.stex" ]
+dest_md5="1109a8da2cd952820c47977285345dfa"
 
 [params]
 

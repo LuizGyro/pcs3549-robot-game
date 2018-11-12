@@ -7,7 +7,10 @@ path="res://.import/test_head.png-e95594a1961e883c57ecf0eb89ce38b8.stex"
 [deps]
 
 source_file="res://character/parts/heads/test_head/test_head.png"
+source_md5="a8133ba97b68a8c5a8ca5b4a998dcb6c"
+
 dest_files=[ "res://.import/test_head.png-e95594a1961e883c57ecf0eb89ce38b8.stex" ]
+dest_md5="bcaa7a8c809510db841dec54e1180bac"
 
 [params]
 

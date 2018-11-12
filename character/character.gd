@@ -17,7 +17,7 @@ func _ready():
 	mass = $Torso.mass + $Torso/LeftArm/Arm.mass + $Torso/RightArm/Arm.mass +\
 			$Torso/Leg/Legs.mass
 	max_speed = $Torso/Leg/Legs.speed / mass
-	position.y -= $Torso/Leg.position.y + $Torso/Leg/Legs/Ground.position.y
+	position.y = $Torso/Leg.position.y + $Torso/Leg/Legs/Ground.position.y
 
 
 func _physics_process(delta):

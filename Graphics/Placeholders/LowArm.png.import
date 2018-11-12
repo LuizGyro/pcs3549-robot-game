@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/test_torso.png-471e82a885461a08a926bdc7f451be33.stex"
+path="res://.import/LowArm.png-682f7c95b412e4c8b160a0d8fd3b2252.stex"
 
 [deps]
 
-source_file="res://character/parts/torsos/test_torso/test_torso.png"
-source_md5="0b0d7e0aa19e5693f60e9632548748ca"
+source_file="res://Graphics/Placeholders/LowArm.png"
+source_md5="c96a1e363841ae395b5eaa36cc0abca6"
 
-dest_files=[ "res://.import/test_torso.png-471e82a885461a08a926bdc7f451be33.stex" ]
-dest_md5="00884d51d9d01f610ee31547bc91ec1f"
+dest_files=[ "res://.import/LowArm.png-682f7c95b412e4c8b160a0d8fd3b2252.stex" ]
+dest_md5="f77be04253578ea1b0f1e7ac2ddc4e44"
 
 [params]
 
