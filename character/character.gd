@@ -10,6 +10,8 @@ var max_speed
 var shielding
 var speed
 
+signal hp_modified
+
 #var right_attack_duration = .2
 #var right_attack_timer = 0
 
@@ -56,14 +58,14 @@ func _physics_process(delta):
 			final_speed = (speed * mass + other.speed * other.mass) / (mass + other.mass)
 	
 	position.x += final_speed * delta
-	
-#	if Input.is_action_just_pressed(player_name + "_attack") and\
-#			right_attack.disabled:
-#		right_attack.disabled = false
+
+	if Input.is_action_just_pressed(player_name + "_attack") and !$Torso/RightArm/Arm.attacking:
+        $Torso/RightArm/Arm/AnimationPlayer.play("attack")
 
 
 func _on_Hurtbox_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
 	
-	print("attacked")
+
+	emit_signal("hp_modified", ($Torso.hp / $Torso.max_hp)*100, player_name, "Torso")

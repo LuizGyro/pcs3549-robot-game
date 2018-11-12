@@ -7,10 +7,7 @@ path="res://.import/Legg.png-878b7789b8ed40cf1788b46c0fe1747a.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/Legg.png"
-source_md5="3dd6870bbe11211cc8b1b99704eb9256"
-
 dest_files=[ "res://.import/Legg.png-878b7789b8ed40cf1788b46c0fe1747a.stex" ]
-dest_md5="1392a539476c9e82d9fc82610fc776f5"
 
 [params]
 

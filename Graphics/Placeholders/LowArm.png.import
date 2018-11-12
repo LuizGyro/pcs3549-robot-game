@@ -7,10 +7,7 @@ path="res://.import/LowArm.png-682f7c95b412e4c8b160a0d8fd3b2252.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/LowArm.png"
-source_md5="c96a1e363841ae395b5eaa36cc0abca6"
-
 dest_files=[ "res://.import/LowArm.png-682f7c95b412e4c8b160a0d8fd3b2252.stex" ]
-dest_md5="f77be04253578ea1b0f1e7ac2ddc4e44"
 
 [params]
 

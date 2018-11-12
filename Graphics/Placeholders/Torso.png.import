@@ -7,10 +7,7 @@ path="res://.import/Torso.png-66423fbb4e416b8b996e3bbbb6249bd1.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/Torso.png"
-source_md5="90f5485d23513d9dea6e80f2a62f6d9f"
-
 dest_files=[ "res://.import/Torso.png-66423fbb4e416b8b996e3bbbb6249bd1.stex" ]
-dest_md5="8ac7b30e99428fe4c911fae6095b212d"
 
 [params]
 

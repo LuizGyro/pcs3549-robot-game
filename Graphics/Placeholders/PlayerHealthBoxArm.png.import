@@ -7,10 +7,7 @@ path="res://.import/PlayerHealthBoxArm.png-9974c8fb36fb23c4b92857deeaafa729.stex
 [deps]
 
 source_file="res://Graphics/Placeholders/PlayerHealthBoxArm.png"
-source_md5="f5ff08509e01772441b4b0fc6e95045d"
-
 dest_files=[ "res://.import/PlayerHealthBoxArm.png-9974c8fb36fb23c4b92857deeaafa729.stex" ]
-dest_md5="1319aa9d74a67642c7813d3ede16bc41"
 
 [params]
 

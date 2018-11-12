@@ -3,7 +3,7 @@
 [ext_resource path="res://character/character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Hud.tscn" type="PackedScene" id=2]
 
-[node name="Stage" type="Node" index="0"]
+[node name="Stage" type="Node"]
 
 [node name="Ground" type="Polygon2D" parent="." index="0"]
 
@@ -32,5 +32,9 @@ scale = Vector2( -0.5, 0.5 )
 player_name = "p2"
 
 [node name="CanvasLayer" parent="." index="3" instance=ExtResource( 2 )]
+
+[connection signal="hp_modified" from="Character" to="CanvasLayer" method="_update_hp_bar"]
+
+[connection signal="hp_modified" from="Character2" to="CanvasLayer" method="_update_hp_bar"]
 
 

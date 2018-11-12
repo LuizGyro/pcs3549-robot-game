@@ -7,10 +7,7 @@ path="res://.import/UpArm.png-609633904cff7300f243d2fe75266ddd.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/UpArm.png"
-source_md5="1893e66de4a3a994c3672297e2b8d546"
-
 dest_files=[ "res://.import/UpArm.png-609633904cff7300f243d2fe75266ddd.stex" ]
-dest_md5="d84bfa63fd9a61af454f9d7349641066"
 
 [params]
 

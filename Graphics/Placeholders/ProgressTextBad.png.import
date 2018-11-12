@@ -7,10 +7,7 @@ path="res://.import/ProgressTextBad.png-b5387b5f02e15beceb547de1093feb37.stex"
 [deps]
 
 source_file="res://Graphics/Placeholders/ProgressTextBad.png"
-source_md5="6cfadcbcc1121d62c8c3878e783a8bf0"
-
 dest_files=[ "res://.import/ProgressTextBad.png-b5387b5f02e15beceb547de1093feb37.stex" ]
-dest_md5="40c44a2eabe9a74696a3771ed239ee0c"
 
 [params]
 
