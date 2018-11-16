@@ -1,9 +1,8 @@
 extends Node2D
 
-export var player_name = "p1"
+export var player_name = "P1"
 
 onready var pushbox = $Torso/Pushbox
-#onready var right_attack = $Torso/RightArm/Hitbox/CollisionShape2D
 
 var mass
 var max_speed
@@ -12,14 +11,10 @@ var speed
 
 signal hp_modified
 
-#var right_attack_duration = .2
-#var right_attack_timer = 0
-
 func _ready():
 	mass = $Torso.mass + $Torso/LeftArm/Arm.mass + $Torso/RightArm/Arm.mass +\
 			$Torso/Leg/Legs.mass
 	max_speed = $Torso/Leg/Legs.speed / mass
-#	position.y = $Torso/Leg.position.y + $Torso/Leg/Legs/Ground.position.y
 
 
 func get_height():
@@ -27,11 +22,6 @@ func get_height():
 
 
 func _physics_process(delta):
-#	if !right_attack.disabled:
-#		right_attack_timer += delta
-#	if right_attack_timer >= right_attack_duration:
-#		right_attack.disabled = true
-#		right_attack_timer = 0
 	
 	shielding = Input.is_action_pressed(player_name + "_shield")
 	
@@ -63,13 +53,14 @@ func _physics_process(delta):
 	
 	position.x += final_speed * delta
 
-	if Input.is_action_just_pressed(player_name + "_attack") and !$Torso/RightArm/Arm.attacking:
-        $Torso/RightArm/Arm/AnimationPlayer.play("attack")
+	if Input.is_action_just_pressed(player_name + "_attack"):
+        $Torso/RightArm/Arm.attack()
 
 
 func _on_Hurtbox_area_entered(area, part):
 	if self.is_a_parent_of(area):
 		return
+	
 	get_node(str(part)).hp -= 10
 	print(float($Torso.hp) / $Torso.max_hp)
 	#var part = area.part

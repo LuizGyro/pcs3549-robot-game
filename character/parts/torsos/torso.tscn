@@ -3,12 +3,11 @@
 [ext_resource path="res://character/parts/torsos/torso.gd" type="Script" id=1]
 [ext_resource path="res://character/parts/torsos/pushbox.gd" type="Script" id=2]
 
-
-
 [node name="Torso" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 mass = 50.0
+max_hp = null
 
 [node name="Hurtbox" type="Area2D" parent="." index="0"]
 
@@ -42,8 +41,8 @@ character_path = null
 
 [node name="LeftArm" type="Position2D" parent="." index="4"]
 
-[node name="RightArm" type="Position2D" parent="." index="5"]
+[node name="Leg" type="Position2D" parent="." index="5"]
 
-[node name="Leg" type="Position2D" parent="." index="6"]
+[node name="RightArm" type="Position2D" parent="." index="6"]
 
 

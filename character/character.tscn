@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
-[ext_resource path="res://character/parts/torsos/test_torso/test_torso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://character/parts/heads/test_head/test_head.tscn" type="PackedScene" id=3]
-[ext_resource path="res://character/parts/arms/test_arm/test_arm.tscn" type="PackedScene" id=4]
-[ext_resource path="res://character/parts/legs/test_legs/test_legs.tscn" type="PackedScene" id=5]
+[ext_resource path="res://character/parts/torsos/thinker/thinker_torso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character/parts/heads/thinker/thinker_head.tscn" type="PackedScene" id=3]
+[ext_resource path="res://character/parts/arms/thinker/thinker_arm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/parts/legs/thinker/thinker_legs.tscn" type="PackedScene" id=5]
 
 [node name="Character" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-player_name = "p1"
+player_name = "P1"
 
 [node name="Torso" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -18,10 +18,6 @@ player_name = "p1"
 
 visible = false
 character_path = NodePath("../..")
-
-[node name="Sprite" parent="Torso" index="2"]
-
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Head" parent="Torso" index="3"]
 
@@ -34,6 +30,7 @@ position = Vector2( 0, -38.1264 )
 
 [node name="LeftArm" parent="Torso" index="4"]
 
+editor/display_folded = true
 modulate = Color( 0.679688, 0.626587, 0.626587, 1 )
 position = Vector2( 68.9964, -77.2332 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]

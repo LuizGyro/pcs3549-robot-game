@@ -2,6 +2,10 @@
 
 [node name="Head" type="Node2D" index="0"]
 
+_sections_unfolded = [ "Transform" ]
+
 [node name="Sprite" type="Sprite" parent="." index="0"]
+
+_sections_unfolded = [ "Transform" ]
 
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://character/parts/legs/legs.gd" type="Script" id=1]
 
-[node name="Legs" type="Node2D" index="0"]
+[node name="Legs" type="Node2D"]
 
 script = ExtResource( 1 )
 mass = null

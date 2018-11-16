@@ -2,13 +2,19 @@ extends Node2D
 
 export(float) var mass
 export(int) var max_hp
-var hp
+
+onready var animation = $AnimationPlayer
 
 var attacking = false
+var hp
 
-func _on_AnimationPlayer_animation_started(anim_name):
-    attacking = true
+func attack():
+	if !attacking:
+		attacking = true
+		animation.play("attack")
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-    attacking = false
+	if anim_name == "attack":
+		attacking = false
+		animation.play("idle")
