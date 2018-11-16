@@ -3,7 +3,7 @@
 [ext_resource path="res://character/parts/torsos/torso.gd" type="Script" id=1]
 [ext_resource path="res://character/parts/torsos/pushbox.gd" type="Script" id=2]
 
-[node name="Torso" type="Node2D" index="0"]
+[node name="Torso" type="Node2D"]
 
 script = ExtResource( 1 )
 mass = 50.0
