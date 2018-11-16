@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://stage/Hud.gd" type="Script" id=1]
+[ext_resource path="res://stage/hud.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Placeholders/ProgressTextGood.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Placeholders/PlayerHealthBoxArm.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Placeholders/ProgressTextBad.png" type="Texture" id=4]
