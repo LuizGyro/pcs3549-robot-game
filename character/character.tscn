@@ -2,11 +2,11 @@
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
 [ext_resource path="res://character/parts/torsos/thinker/thinker_torso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://character/parts/heads/thinker/thinker_head.tscn" type="PackedScene" id=3]
-[ext_resource path="res://character/parts/arms/thinker/thinker_arm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/parts/heads/wood/wood_head.tscn" type="PackedScene" id=3]
+[ext_resource path="res://character/parts/arms/wood/wood_arm.tscn" type="PackedScene" id=4]
 [ext_resource path="res://character/parts/legs/thinker/thinker_legs.tscn" type="PackedScene" id=5]
 
-[node name="Character" type="Node2D"]
+[node name="Character" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -26,34 +26,27 @@ position = Vector2( 15, -110.739 )
 
 [node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 0, -38.1264 )
-
 [node name="LeftArm" parent="Torso" index="4"]
 
-editor/display_folded = true
 modulate = Color( 0.679688, 0.626587, 0.626587, 1 )
 position = Vector2( 68.9964, -77.2332 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 4 )]
 
-max_hp = null
-
-[node name="RightArm" parent="Torso" index="5"]
-
-editor/display_folded = true
-position = Vector2( -23.7623, -71.6196 )
-
-[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 4 )]
-
-max_hp = null
-
-[node name="Leg" parent="Torso" index="6"]
+[node name="Leg" parent="Torso" index="5"]
 
 editor/display_folded = true
 position = Vector2( 81.1809, 148.902 )
 
 [node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 5 )]
+
+[node name="RightArm" parent="Torso" index="6"]
+
+editor/display_folded = true
+position = Vector2( -23.7623, -71.6196 )
+
+[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 4 )]
 
 [connection signal="area_entered" from="Torso/Hurtbox" to="." method="_on_Hurtbox_area_entered" binds= [ "Torso" ]]
 
