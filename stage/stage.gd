@@ -1,6 +1,6 @@
 extends Node
 
-const FLOOR_Y = 400
+const FLOOR_Y = 500
 
 onready var screen_size = get_viewport().size
 
