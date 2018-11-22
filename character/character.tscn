@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
 [ext_resource path="res://character/parts/torsos/thinker/thinker_torso.tscn" type="PackedScene" id=2]
 [ext_resource path="res://character/parts/heads/wood/wood_head.tscn" type="PackedScene" id=3]
 [ext_resource path="res://character/parts/arms/wood/wood_arm.tscn" type="PackedScene" id=4]
 [ext_resource path="res://character/parts/legs/thinker/thinker_legs.tscn" type="PackedScene" id=5]
+[ext_resource path="res://character/parts/arms/presser/presser_arm.tscn" type="PackedScene" id=6]
 
-[node name="Character" type="Node2D"]
+[node name="Character" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -30,7 +31,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 5 )]
 
-[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 4 )]
+[node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 6 )]
 
 [connection signal="area_entered" from="Torso/Hurtbox" to="." method="_on_Hurtbox_area_entered" binds= [ "Torso" ]]
 
