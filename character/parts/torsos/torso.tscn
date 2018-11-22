@@ -41,8 +41,15 @@ character_path = null
 
 [node name="LeftArm" type="Position2D" parent="." index="4"]
 
+modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
+z_index = -1
+_sections_unfolded = [ "Visibility", "Z Index" ]
+
 [node name="Leg" type="Position2D" parent="." index="5"]
 
 [node name="RightArm" type="Position2D" parent="." index="6"]
+
+z_index = 1
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 
