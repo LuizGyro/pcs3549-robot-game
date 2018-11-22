@@ -8,6 +8,9 @@ onready var animation = $AnimationPlayer
 var attacking = false
 var hp
 
+func _ready():
+	hp = max_hp
+
 func attack():
 	if !attacking:
 		attacking = true

@@ -2,19 +2,54 @@ extends Node2D
 
 export var player_name = "P1"
 
-onready var pushbox = $Torso/Pushbox
-
 var mass
 var max_speed
 var shielding
 var speed
+var hurtbox
+var pushbox
 
 signal hp_modified
 
 func _ready():
-	mass = $Torso.mass + $Torso/LeftArm/Arm.mass + $Torso/RightArm/Arm.mass +\
-			$Torso/Leg/Legs.mass
+	build_body()
+	
 	max_speed = $Torso/Leg/Legs.speed / mass
+	
+	pushbox = $Torso/Pushbox
+	hurtbox = $Torso/Hurtbox
+	
+	hurtbox.connect("area_entered", self, "_on_Torso_area_entered")
+	pushbox.character = self
+	
+	set_physics_process(false)
+
+
+func build_body():
+	var parts_array
+	if player_name == "P1":
+		parts_array = parts.p1
+	else:
+		parts_array = parts.p2
+	
+	var torso = load(parts.torsos[parts_array[parts.TORSO]]).instance()
+	add_child(torso)
+	mass = torso.mass
+	
+	var head = load(parts.heads[parts_array[parts.HEAD]]).instance()
+	$Torso/Head.add_child(head)
+	
+	var left_arm = load(parts.arms[parts_array[parts.LEFT_ARM]]).instance()
+	$Torso/LeftArm.add_child(left_arm)
+	mass += left_arm.mass
+	
+	var right_arm = load(parts.arms[parts_array[parts.RIGHT_ARM]]).instance()
+	$Torso/RightArm.add_child(right_arm)
+	mass += right_arm.mass
+	
+	var leg = load(parts.legs[parts_array[parts.LEGS]]).instance()
+	$Torso/Leg.add_child(leg)
+	mass += leg.mass
 
 
 func get_height():
@@ -49,7 +84,8 @@ func _physics_process(delta):
 		# Acoplar
 		if (v1 > 0 and v2 <= 0) or (v1 == 0 and v2 < 0) or\
 				(v1 > v2 and sign(v1) == sign(v2)):
-			final_speed = (speed * mass + other.speed * other.mass) / (mass + other.mass)
+			final_speed = (speed * mass + other.speed * other.mass)\
+					/ (mass + other.mass)
 	
 	position.x += final_speed * delta
 
@@ -57,11 +93,10 @@ func _physics_process(delta):
         $Torso/RightArm/Arm.attack()
 
 
-func _on_Hurtbox_area_entered(area, part):
+func _on_Torso_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
 	
-	get_node(str(part)).hp -= 10
+	$Torso.hp -= 10
 	print(float($Torso.hp) / $Torso.max_hp)
-	#var part = area.part
 	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")

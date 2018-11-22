@@ -7,6 +7,8 @@ onready var screen_size = get_viewport().size
 func _ready():
 	place_character($Character, screen_size.x * .25)
 	place_character($Character2, screen_size.x * .75)
+	$Character.set_physics_process(true)
+	$Character2.set_physics_process(true)
 
 
 func place_character(ch, x):
