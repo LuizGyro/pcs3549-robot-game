@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://character/character.gd" type="Script" id=1]
-[ext_resource path="res://character/parts/torsos/presser/presser_torso.tscn" type="PackedScene" id=2]
-[ext_resource path="res://character/parts/heads/presser/presser_head.tscn" type="PackedScene" id=3]
-[ext_resource path="res://character/parts/arms/presser/presser_arm.tscn" type="PackedScene" id=4]
+[ext_resource path="res://character/parts/torsos/wood/wood_torso.tscn" type="PackedScene" id=2]
+[ext_resource path="res://character/parts/heads/wood/wood_head.tscn" type="PackedScene" id=3]
+[ext_resource path="res://character/parts/arms/wood/wood_arm.tscn" type="PackedScene" id=4]
 [ext_resource path="res://character/parts/legs/wood/wood_legs.tscn" type="PackedScene" id=5]
 
 [node name="Character" type="Node2D" index="0"]
@@ -20,17 +20,9 @@ character_path = NodePath("../..")
 
 [node name="Head" parent="Torso/Head" index="0" instance=ExtResource( 3 )]
 
-[node name="LeftArm" parent="Torso" index="4"]
-
-modulate = Color( 0.501961, 0.501961, 0.501961, 1 )
-
 [node name="Arm" parent="Torso/LeftArm" index="0" instance=ExtResource( 4 )]
 
 [node name="Legs" parent="Torso/Leg" index="0" instance=ExtResource( 5 )]
-
-[node name="RightArm" parent="Torso" index="6"]
-
-_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Arm" parent="Torso/RightArm" index="0" instance=ExtResource( 4 )]
 

@@ -43,23 +43,22 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Head" parent="." index="3"]
 
-position = Vector2( 15, -40 )
+position = Vector2( 5, -78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="LeftArm" parent="." index="4"]
 
-position = Vector2( 50, -30 )
-z_index = -1
-_sections_unfolded = [ "Transform", "Z Index" ]
+position = Vector2( 20, -65 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Leg" parent="." index="5"]
 
-position = Vector2( 5, 70 )
+position = Vector2( 0, 90 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="RightArm" parent="." index="6"]
 
-position = Vector2( -40, -40 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( -10, -60 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 
