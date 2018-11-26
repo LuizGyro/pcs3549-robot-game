@@ -60,19 +60,27 @@ func replace_part(part):
 	else:
 		parts_array = parts.p2
 	
+	var new
+	
 	match part:
 		parts.HEAD:
-			var new = load(parts.heads[parts_array[parts.HEAD]]).instance()
+			new = load(parts.heads[parts_array[parts.HEAD]]).instance()
 			$Torso/Head.get_child(0).queue_free()
 			$Torso/Head.add_child(new)
 		parts.TORSO:
 			pass
 		parts.RIGHT_ARM:
-			pass
+			new = load(parts.arms[parts_array[parts.RIGHT_ARM]]).instance()
+			$Torso/RightArm.get_child(0).queue_free()
+			$Torso/RightArm.add_child(new)
 		parts.LEFT_ARM:
-			pass
+			new = load(parts.arms[parts_array[parts.LEFT_ARM]]).instance()
+			$Torso/LeftArm.get_child(0).queue_free()
+			$Torso/LeftArm.add_child(new)
 		parts.LEGS:
-			pass
+			new = load(parts.legs[parts_array[parts.LEGS]]).instance()
+			$Torso/Leg.get_child(0).queue_free()
+			$Torso/Leg.add_child(new)
 	
 
 
