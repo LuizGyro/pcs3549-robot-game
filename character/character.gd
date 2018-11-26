@@ -52,6 +52,30 @@ func build_body():
 	mass += leg.mass
 
 
+func replace_part(part):
+	print(part)
+	var parts_array
+	if player_name == "P1":
+		parts_array = parts.p1
+	else:
+		parts_array = parts.p2
+	
+	match part:
+		parts.HEAD:
+			var new = load(parts.heads[parts_array[parts.HEAD]]).instance()
+			$Torso/Head.get_child(0).queue_free()
+			$Torso/Head.add_child(new)
+		parts.TORSO:
+			pass
+		parts.RIGHT_ARM:
+			pass
+		parts.LEFT_ARM:
+			pass
+		parts.LEGS:
+			pass
+	
+
+
 func get_height():
 	return $Torso/Leg/Legs/Ground.global_position.y - global_position.y
 

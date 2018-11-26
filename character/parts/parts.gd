@@ -2,6 +2,8 @@ extends Node
 
 enum {HEAD, TORSO, RIGHT_ARM, LEFT_ARM, LEGS}
 
+onready var total = 5
+
 var heads = ["res://character/parts/heads/presser/presser_head.tscn",
 		"res://character/parts/heads/thinker/thinker_head.tscn",
 		"res://character/parts/heads/wood/wood_head.tscn"]
@@ -20,3 +22,7 @@ var p2 = [0, 0, 0, 0, 0]
 
 func _ready():
 	pass
+
+
+func change(player, part, offset):
+	player[part] = (player[part] + heads.size() + offset) % heads.size()
