@@ -2,6 +2,7 @@ extends HBoxContainer
 
 const COL_SELECT = Color(.7, .7, .4)
 const COL_UNSELECT = Color(.15, .15, .15)
+const FOCUS_DURATION = .15
 
 onready var left = $Left
 onready var texture = $Texture
@@ -17,12 +18,7 @@ func unselected(rect=texture):
 
 func focus(arrow):
 	selected(arrow)
-	var timer = Timer.new()
-	timer.wait_time = .15
-	add_child(timer)
-	timer.start()
-	yield(timer, "timeout")
-	timer.queue_free()
+	yield(get_tree().create_timer(FOCUS_DURATION), "timeout")
 	unselected(arrow)
 
 
