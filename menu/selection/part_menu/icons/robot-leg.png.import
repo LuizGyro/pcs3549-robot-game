@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/left.png-df3a01a4d19faa911d4f73d32ede530e.stex"
+path="res://.import/robot-leg.png-05c1fa670ab91a24f012233f84d81144.stex"
 
 [deps]
 
-source_file="res://menu/selection/part_menu/left.png"
-dest_files=[ "res://.import/left.png-df3a01a4d19faa911d4f73d32ede530e.stex" ]
+source_file="res://menu/selection/part_menu/icons/robot-leg.png"
+dest_files=[ "res://.import/robot-leg.png-05c1fa670ab91a24f012233f84d81144.stex" ]
 
 [params]
 

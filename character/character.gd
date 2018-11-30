@@ -68,7 +68,8 @@ func replace_part(part):
 			$Torso/Head.get_child(0).queue_free()
 			$Torso/Head.add_child(new)
 		parts.TORSO:
-			pass
+			remove_child($Torso)
+			build_body()
 		parts.RIGHT_ARM:
 			new = load(parts.arms[parts_array[parts.RIGHT_ARM]]).instance()
 			$Torso/RightArm.get_child(0).queue_free()
