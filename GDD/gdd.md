@@ -17,20 +17,20 @@ Mathias Menck, NUSP: 4343470
 1. Index
 2. Index
 	* Game Design
-	* Summary
-	* Gameplay
-3. Mindset
-	* Technical
+		* Summary
+		* Gameplay
+		* Mindset
+3. Technical
 	* Screens
 	* Controls
 	* Mechanics
 4. Level Design
 	* Themes
-	* Ambience
-	* Objects
-	* Ambient
-	* Interactive
-	* Challenges
+		* Ambience
+		* Objects
+			* Ambient
+			* Interactive
+		* Challenges
 	* Game Flow
 5. Development
 	* Abstract Classes
