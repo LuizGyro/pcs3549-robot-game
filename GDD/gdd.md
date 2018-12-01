@@ -13,36 +13,35 @@ Luiz Girotto, NUSP: 8941189
 
 Mathias Menck, NUSP: 4343470
 
-# Index
-1. Index
-2. Index
-	* Game Design
-		* Summary
-		* Gameplay
-		* Mindset
-3. Technical
-	* Screens
-	* Controls
-	* Mechanics
-4. Level Design
-	* Themes
-		* Ambience
-		* Objects
-			* Ambient
-			* Interactive
-		* Challenges
+# Índice
+1. Índice
+2. Game Design
+	* Resumo
+	* Gameplay
+	* Mindset
+3. Técnico
+	* Telas
+	* Controles
+	* Mecânicas
+4. Design da Fase
+	* Temas
+		* Ambiência
+		* Objetos
+			* Ambiente
+			* Interativos
+		* Desafios
 	* Game Flow
-5. Development
-	* Abstract Classes
-	* Derived Classes
-6. Graphics
-	* Style Attributes
-	* Graphics Needed
-7. Sounds/Music
-	* Style Attributes
-	* Sounds Needed
-	* Music Needed
-8. Schedule
+5. Desenvolvimento
+	* Classes Abstratas
+	* Classes Derivadas
+6. Gráficos
+	* Atributos do Estilo
+	* Graphicos necessários
+7. Música e Sons
+	* Atributos do Estilo
+	* Sons necessários
+	* Musica necessária
+8. Cronograma
 
 
 # Game Design
