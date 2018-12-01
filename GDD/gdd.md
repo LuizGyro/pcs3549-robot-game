@@ -57,12 +57,19 @@ Mathias Menck, NUSP: 4343470
 # Técnico
 ## Telas
 Title Screen
+
 Options
+
 Level Select
+
 Game
+
 Inventory
+
 Assessment / Next Level
+
 End Credits
+
 (example)
 ## Controles
 > How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
@@ -74,76 +81,99 @@ End Credits
 (Note : These sections can safely be skipped if they’re not relevant, or you’d rather go about it another way. For most games, at least one of them should be useful. But I’ll understand if you don’t want to use them. It’ll only hurt my feelings a little bit.)
 ## Themes
 Forest
+
 Mood
+
 Dark, calm, foreboding
+
 Objects
+
 Ambient
+
+
 Fireflies
-Beams of moonlight
-Tall grass
-Interactive
-Wolves
-Goblins
-Rocks
-Castle
-Mood
-Dangerous, tense, active
-Objects
-Ambient
-Rodents
-Torches
-Suits of armor
-Interactive
-Guards
-Giant rats
-Chests
-(example)
+
+
 
 
 ## Game Flow
 Player starts in forest
+
 Pond to the left, must move right
+
 To the right is a hill, player jumps to traverse it (“jump” taught)
+
 Player encounters castle - door’s shut and locked
+
 There’s a window within jump height, and a rock on the ground
+
 Player picks up rock and throws at glass (“throw” taught)
+
 … etc.
+
 (example)
 
 
 # Desenvolvimento
 ## Classes Abstratas
 BasePhysics
+
 BasePlayer
+
 BaseEnemy
+
 BaseObject
+
 BaseObstacle
+
 BaseInteractable
+
 (example)
 
 
 ## Classes Derivadas
 BasePlayer
+
 PlayerMain
+
 PlayerUnlockable
+
 BaseEnemy
+
 EnemyWolf
+
 EnemyGoblin
+
 EnemyGuard (may drop key)
+
 EnemyGiantRat
+
 EnemyPrisoner
+
 BaseObject
+
 ObjectRock (pick-up-able, throwable)
+
 ObjectChest (pick-up-able, throwable, spits gold coins with key)
+
 ObjectGoldCoin (cha-ching!)
+
 ObjectKey (pick-up-able, throwable)
+
 BaseObstacle
+
 ObstacleWindow (destroyed with rock)
+
 ObstacleWall
+
 ObstacleGate (watches to see if certain buttons are pressed)
+
 BaseInteractable
+
 InteractableButton
+
 (example)
+
 
 # Gráficos
 ## Estilo
@@ -156,40 +186,73 @@ What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, spec
 
 ## Gráficos Necessários
 Characters
+
 Human-like
+
 Goblin (idle, walking, throwing)
+
 Guard (idle, walking, stabbing)
+
 Prisoner (walking, running)
+
 Other
+
 Wolf (idle, walking, running)
+
 Giant Rat (idle, scurrying)
+
 Blocks
+
 Dirt
+
 Dirt/Grass
+
 Stone Block
+
 Stone Bricks
+
 Tiled Floor
+
 Weathered Stone Block
+
 Weathered Stone Bricks
+
 Ambient
+
 Tall Grass
+
+
 Rodent (idle, scurrying)
+
 Torch
+
 Armored Suit
+
 Chains (matching Weathered Stone Bricks)
+
 Blood stains (matching Weathered Stone Bricks)
+
+
 Other
+
 Chest
+
 Door (matching Stone Bricks)
+
 Gate
+
+
 Button (matching Weathered Stone Bricks)
+
 (example)
+
+
 
 (Note : If you’re soloing you might not need to define this part, as you can just use the Derived Classes + Themes section as a reference. It’s up to you.)
 
 
 # Música e Sons
-## Style Attributes
+## Estilo
 > Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
 
 Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario’s jump), or use just enough to let the player know something happened (e.g. mega man’s landing)? Going for realism? You can use the music style as a bit of a reference too.
@@ -197,20 +260,33 @@ Stylistically, what kind of sound effects are you looking for? Do you want to ex
 > Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music and sounds - so plan accordingly!
 
 
-## Sons necessária
+## Sons Necessários
 Effects
+
 Soft Footsteps (dirt floor)
+
 Sharper Footsteps (stone floor)
+
 Soft Landing (low vertical velocity)
+
 Hard Landing (high vertical velocity)
+
 Glass Breaking
+
 Chest Opening
+
 Door Opening
+
 Feedback
+
 Relieved “Ahhhh!” (health)
+
 Shocked “Ooomph!” (attacked)
+
 Happy chime (extra life)
+
 Sad chime (died)
+
 (example)
 
 ## Música necessária
