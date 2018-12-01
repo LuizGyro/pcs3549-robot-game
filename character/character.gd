@@ -53,7 +53,6 @@ func build_body():
 
 
 func replace_part(part):
-	print(part)
 	var parts_array
 	if player_name == "P1":
 		parts_array = parts.p1
