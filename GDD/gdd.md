@@ -35,27 +35,27 @@ Mathias Menck, NUSP: 4343470
 	* Classes Abstratas
 	* Classes Derivadas
 6. Gráficos
-	* Atributos do Estilo
-	* Graphicos necessários
+	* Estilo
+	* Gráficos necessários
 7. Música e Sons
-	* Atributos do Estilo
+	* Estilo
 	* Sons necessários
-	* Musica necessária
+	* Música necessária
 8. Cronograma
 
 
 # Game Design
 
-## Summary
-	Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
+## Resumo
+> Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
 ## Gameplay
-	What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
+> What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
 ## Mindset
-	What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+> What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
 
 
-# Technical
-## Screens
+# Técnico
+## Telas
 Title Screen
 Options
 Level Select
@@ -64,10 +64,10 @@ Inventory
 Assessment / Next Level
 End Credits
 (example)
-## Controls
-	How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
-## Mechanics
-	Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
+## Controles
+> How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
+## Mecânicas
+> Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
 
 
 # Level Design
@@ -111,8 +111,8 @@ Player picks up rock and throws at glass (“throw” taught)
 (example)
 
 
-# Development
-## Abstract Classes / Components
+# Desenvolvimento
+## Classes Abstratas
 BasePhysics
 BasePlayer
 BaseEnemy
@@ -122,7 +122,7 @@ BaseInteractable
 (example)
 
 
-## Derived Classes / Component Compositions
+## Classes Derivadas
 BasePlayer
 PlayerMain
 PlayerUnlockable
@@ -145,16 +145,16 @@ BaseInteractable
 InteractableButton
 (example)
 
-# Graphics
-## Style Attributes
+# Gráficos
+## Estilo
 What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
 
 What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
 
-	Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they’re interacting with something? That they *can* interact with something?
+> Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they’re interacting with something? That they *can* interact with something?
 
 
-## Graphics Needed
+## Gráficos Necessários
 Characters
 Human-like
 Goblin (idle, walking, throwing)
@@ -188,16 +188,16 @@ Button (matching Weathered Stone Bricks)
 (Note : If you’re soloing you might not need to define this part, as you can just use the Derived Classes + Themes section as a reference. It’s up to you.)
 
 
-# Sounds/Music
+# Música e Sons
 ## Style Attributes
-	Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
+> Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
 
 Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario’s jump), or use just enough to let the player know something happened (e.g. mega man’s landing)? Going for realism? You can use the music style as a bit of a reference too.
 	
-	Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music and sounds - so plan accordingly!
+> Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music and sounds - so plan accordingly!
 
 
-## Sounds Needed
+## Sons necessária
 Effects
 Soft Footsteps (dirt floor)
 Sharper Footsteps (stone floor)
@@ -213,7 +213,7 @@ Happy chime (extra life)
 Sad chime (died)
 (example)
 
-## Music Needed
+## Música necessária
 Slow-paced, nerve-racking “forest” track
 Exciting “castle” track
 Creepy, slow “dungeon” track
@@ -223,7 +223,7 @@ Rick Astley’s hit #1 single “Never Gonna Give You Up”
 
 (Note : Again, if you’re soloing you might be able to / want to skip this section. It’s up to you.)
 
-# Schedule
+# Cronograma
 (what is a schedule, i don’t even. list is good enough, right? if not add some dates i guess)
 
 
