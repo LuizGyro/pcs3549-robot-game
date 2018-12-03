@@ -105,6 +105,7 @@ tracks/1/keys = {
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 mass = 1.0
 max_hp = 40
+dmg = 7
 
 [node name="Sprite" parent="." index="0"]
 

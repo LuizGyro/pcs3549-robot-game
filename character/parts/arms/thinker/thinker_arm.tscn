@@ -103,8 +103,9 @@ tracks/1/keys = {
 [node name="Arm" instance=ExtResource( 1 )]
 
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
-mass = 1.0
+mass = 2.0
 max_hp = 40
+dmg = 14
 
 [node name="Sprite" parent="." index="0"]
 

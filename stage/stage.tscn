@@ -34,10 +34,10 @@ position = Vector2( 600, 368 )
 scale = Vector2( -0.8, 0.8 )
 player_name = "P2"
 
-[node name="CanvasLayer" parent="." index="3" instance=ExtResource( 3 )]
+[node name="HUD" parent="." index="3" instance=ExtResource( 3 )]
 
-[connection signal="hp_modified" from="Character" to="CanvasLayer" method="_update_hp_bar"]
+[connection signal="hp_modified" from="Character" to="HUD" method="_update_hp_bar"]
 
-[connection signal="hp_modified" from="Character2" to="CanvasLayer" method="_update_hp_bar"]
+[connection signal="hp_modified" from="Character2" to="HUD" method="_update_hp_bar"]
 
 

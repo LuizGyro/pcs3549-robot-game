@@ -10,6 +10,7 @@ var hurtbox
 var pushbox
 
 signal hp_modified
+signal died
 
 func _ready():
 	build_body()
@@ -50,6 +51,9 @@ func build_body():
 	var leg = load(parts.legs[parts_array[parts.LEGS]]).instance()
 	$Torso/Leg.add_child(leg)
 	mass += leg.mass
+	
+	right_arm.set_mass(mass)
+	left_arm.set_mass(mass)
 
 
 func replace_part(part):
@@ -123,12 +127,19 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed(player_name + "_attack"):
         $Torso/RightArm/Arm.attack()
+	
+	# Lose condition
+	if position.x < 0 or position.x > get_viewport().size.x:
+		emit_signal("died", player_name)
 
 
 func _on_Torso_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
 	
-	$Torso.hp -= 10
+	$Torso.hp -= area.get_parent().get_parent().get_parent().dmg
 	print(float($Torso.hp) / $Torso.max_hp)
 	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")
+	
+	if $Torso.hp <= 0:
+		emit_signal("died", player_name)

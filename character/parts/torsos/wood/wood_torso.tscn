@@ -16,8 +16,8 @@ extents = Vector2( 40, 90 )
 [node name="Torso" instance=ExtResource( 1 )]
 
 _sections_unfolded = [ "Transform" ]
-mass = 5.0
-max_hp = 100
+mass = 3.0
+max_hp = 60
 
 [node name="Hurtbox" parent="." index="0"]
 
