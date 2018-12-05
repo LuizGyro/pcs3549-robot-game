@@ -52,8 +52,8 @@ func build_body():
 	$Torso/Leg.add_child(leg)
 	mass += leg.mass
 	
-	right_arm.set_mass(mass)
-	left_arm.set_mass(mass)
+#	right_arm.set_mass(mass)
+#	left_arm.set_mass(mass)
 
 
 func replace_part(part):
@@ -126,7 +126,7 @@ func _physics_process(delta):
 	position.x += final_speed * delta
 
 	if Input.is_action_just_pressed(player_name + "_attack"):
-        $Torso/RightArm/Arm.attack()
+        $Torso/RightArm/Arm.weak_attack()
 	
 	# Lose condition
 	if position.x < 0 or position.x > get_viewport().size.x:
@@ -137,8 +137,7 @@ func _on_Torso_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
 	
-	$Torso.hp -= area.get_parent().get_parent().get_parent().dmg
-	print(float($Torso.hp) / $Torso.max_hp)
+	$Torso.hp -= area.damage
 	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")
 	
 	if $Torso.hp <= 0:

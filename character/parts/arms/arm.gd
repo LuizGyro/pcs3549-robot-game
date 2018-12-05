@@ -2,7 +2,6 @@ extends Node2D
 
 export(float) var mass
 export(int) var max_hp
-export(int) var dmg = 0
 
 onready var animation = $AnimationPlayer
 
@@ -11,17 +10,24 @@ var hp
 
 func _ready():
 	hp = max_hp
+	animation.playback_speed = 2/mass
 
-func set_mass(mass):
-	animation.playback_speed = 13/mass
 
-func attack():
+func strong_attack():
+	attack("strong")
+
+
+func weak_attack():
+	attack("weak")
+
+
+func attack(name):
 	if !attacking:
 		attacking = true
-		animation.play("attack")
+		animation.play(str(name + "_attack"))
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "attack":
+	if anim_name.ends_with("attack"):
 		attacking = false
 		animation.play("idle")
