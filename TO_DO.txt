@@ -1,4 +1,3 @@
-- Add damage to hitboxes
 - Add knockback to hitboxes
 - Make arms take damage
 - Add other arm to input

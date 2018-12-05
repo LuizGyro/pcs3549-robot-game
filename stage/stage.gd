@@ -12,9 +12,7 @@ func _ready():
 	place_character(p1, screen_size.x * .25)
 	place_character(p2, screen_size.x * .75)
 	p1.set_physics_process(true)
-	p1.connect("died", self, "_on_character_death")
 	p2.set_physics_process(true)
-	p2.connect("died", self, "_on_character_death")
 	
 	set_process_input(false)
 

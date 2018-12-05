@@ -36,7 +36,11 @@ player_name = "P2"
 
 [node name="HUD" parent="." index="3" instance=ExtResource( 3 )]
 
+[connection signal="died" from="Character" to="." method="_on_character_death"]
+
 [connection signal="hp_modified" from="Character" to="HUD" method="_update_hp_bar"]
+
+[connection signal="died" from="Character2" to="." method="_on_character_death"]
 
 [connection signal="hp_modified" from="Character2" to="HUD" method="_update_hp_bar"]
 
