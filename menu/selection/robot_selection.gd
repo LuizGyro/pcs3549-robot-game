@@ -30,6 +30,17 @@ func _ready():
 	player2.scale.x *= -1
 	player2.player_name = "P2"
 	$Characters.add_child(player2)
+	
+func play_sound(fx):
+	var sound = AudioStreamPlayer2D.new()
+	self.add_child(sound)
+	if fx == "plop":
+		sound.stream = load("res://assets/sound/plop.wav")
+	elif fx == "p1_ready":
+		sound.stream = load("res://assets/sound/p1_ready.wav")
+	elif fx == "p2_ready":
+		sound.stream = load("res://assets/sound/p2_ready.wav")
+	sound.play()
 
 
 func toggle_ready(player):
@@ -53,37 +64,47 @@ func _input(event):
 	# Player 1 controls
 	if !p1_ready:
 		if event.is_action_pressed("P1_down"):
+			play_sound("plop")
 			p1_menu.next_part()
 			p1_part = (p1_part + 1) % parts.total
 		elif event.is_action_pressed("P1_up"):
+			play_sound("plop")
 			p1_menu.previous_part()
 			p1_part = (p1_part + parts.total - 1) % parts.total
 		elif event.is_action_pressed("P1_left"):
+			play_sound("plop")
 			p1_menu.left()
 			parts.change(parts.p1, p1_part, -1)
 			player1.replace_part(p1_part)
 		elif event.is_action_pressed("P1_right"):
+			play_sound("plop")
 			p1_menu.right()
 			parts.change(parts.p1, p1_part, 1)
 			player1.replace_part(p1_part)
 	if event.is_action_pressed("P1_start"):
+		play_sound("p1_ready")
 		toggle_ready(1)
 	
 	# Player 2 controls
 	if !p2_ready:
 		if event.is_action_pressed("P2_down"):
+			play_sound("plop")
 			p2_menu.next_part()
 			p2_part = (p2_part + 1) % parts.total
 		elif event.is_action_pressed("P2_up"):
+			play_sound("plop")
 			p2_menu.previous_part()
 			p2_part = (p2_part + parts.total - 1) % parts.total
 		elif event.is_action_pressed("P2_left"):
+			play_sound("plop")
 			p2_menu.left()
 			parts.change(parts.p2, p2_part, -1)
 			player2.replace_part(p2_part)
 		elif event.is_action_pressed("P2_right"):
+			play_sound("plop")
 			p2_menu.right()
 			parts.change(parts.p2, p2_part, 1)
 			player2.replace_part(p2_part)
 	if event.is_action_pressed("P2_start"):
+		play_sound("p2_ready")
 		toggle_ready(2)

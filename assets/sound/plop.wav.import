@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plop.wav-e7a8cfcace1180a8e9f42a3b0b359fb2.sample"
+
+[deps]
+
+source_file="res://assets/sound/plop.wav"
+dest_files=[ "res://.import/plop.wav-e7a8cfcace1180a8e9f42a3b0b359fb2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

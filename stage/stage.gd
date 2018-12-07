@@ -13,9 +13,17 @@ func _ready():
 	place_character(p2, screen_size.x * .75)
 	p1.set_physics_process(true)
 	p2.set_physics_process(true)
-	
+	play_sound("fight")		
 	set_process_input(false)
 
+func play_sound(fx):
+	var sound = AudioStreamPlayer2D.new()
+	if fx == "winner":
+		sound.stream = load("res://assets/sound/winner.wav")
+	if fx == "fight":
+		sound.stream = load("res://assets/sound/fight.wav")
+	self.add_child(sound)
+	sound.play()
 
 func place_character(ch, x):
 	ch.position.x = x
@@ -31,6 +39,7 @@ func _on_character_death(player_name):
 	if game_over:
 		return
 	
+	play_sound("winner")
 	game_over = true
 	p1.set_physics_process(false)
 	p2.set_physics_process(false)

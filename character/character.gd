@@ -24,6 +24,13 @@ func _ready():
 	pushbox.character = self
 	
 	set_physics_process(false)
+	
+func play_sound(fx):
+	var sound = AudioStreamPlayer2D.new()
+	self.add_child(sound)
+	if fx == "hit":
+		sound.stream = load("res://assets/sound/clang.wav")
+	sound.play()
 
 
 func build_body():
@@ -136,6 +143,8 @@ func _physics_process(delta):
 func _on_Torso_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
+	
+	play_sound("hit")
 	
 	$Torso.hp -= area.damage
 	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")
