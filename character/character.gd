@@ -30,6 +30,8 @@ func play_sound(fx):
 	self.add_child(sound)
 	if fx == "hit":
 		sound.stream = load("res://assets/sound/clang.wav")
+	if fx == "squeak":
+		sound.stream = load("res://assets/sound/squeak.wav")
 	sound.play()
 
 
@@ -144,10 +146,13 @@ func _on_Torso_area_entered(area):
 	if self.is_a_parent_of(area):
 		return
 	
-	play_sound("hit")
-	
-	$Torso.hp -= area.damage
-	emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")
+
+	if shielding:
+		play_sound("squeak")
+	else :
+		play_sound("hit")
+		$Torso.hp -= area.damage
+		emit_signal("hp_modified", (float($Torso.hp) / $Torso.max_hp)*100, player_name, "Torso")
 	
 	if $Torso.hp <= 0:
 		emit_signal("died", player_name)
