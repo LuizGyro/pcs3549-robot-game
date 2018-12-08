@@ -47,71 +47,38 @@ Mathias Menck, NUSP: 4343470
 # Game Design
 
 ## Resumo
-> Sum up your game idea in 2 sentences. A kind of elevator pitch. Keep it simple!
-## Gameplay
-> What should the gameplay be like? What is the goal of the game, and what kind of obstacles are in the way? What tactics should the player use to overcome them?
-## Mindset
-> What kind of mindset do you want to provoke in the player? Do you want them to feel powerful, or weak? Adventurous, or nervous? Hurried, or calm? How do you intend to provoke those emotions?
+> Batalha de Robos: Dois robos se enfrentam em uma arena, existindo duas condições de vitória: Empurrar o adversário para fora da arena ou deixar seu hp em 0.
 
+## Gameplay
+> O jogo baseia-se nos famosos brawlers 2D mas com características únicas, notadamente, personagens customizáveis, permitindo muita variabilidade de habilidade e a mecânica de _sumô_, com a eliminação por sair da área de combate e a inexistência da capacidade de saltar.
+
+## Mindset
+> A inteção do jogo é ser frenético, com partidas muito rápidas. A penalidade por saída da área de combate exige enfrentamento entre os jogadores, fazendo com que o embate seja inevitável e exista pouco espaço para deliberações. Além disso, enfase especial foi dada na montagem dos robos, permitindo que, aliada com tempo curto de partida, muitos batalhas em sequencia ocorram, baseadas na variabildiade de poderes e na sensação de _revanche_ criada entre os competidores.
 
 # Técnico
 ## Telas
-Title Screen
+Menu de seleção de peças
 
-Options
+Combates
 
-Level Select
+Tela de anúncio do vencedor
 
-Game
-
-Inventory
-
-Assessment / Next Level
-
-End Credits
-
-(example)
 ## Controles
-> How will the player interact with the game? Will they be able to choose the controls? What kind of in-game events are they going to be able to trigger, and how? (e.g. pressing buttons, opening doors, etc.)
+> Os controles possíveis para os jogadores são:
+
+1. Movimentação do robo
+	* esquerda
+	* direita
+
+2. Atacar
+	* braço esquerdo
+	* braço direito
+
+3. Defender
+
 ## Mecânicas
-> Are there any interesting mechanics? If so, how are you going to accomplish them? Physics, algorithms, etc.
-
-
-# Level Design
-(Note : These sections can safely be skipped if they’re not relevant, or you’d rather go about it another way. For most games, at least one of them should be useful. But I’ll understand if you don’t want to use them. It’ll only hurt my feelings a little bit.)
-## Themes
-Forest
-
-Mood
-
-Dark, calm, foreboding
-
-Objects
-
-Ambient
-
-
-Fireflies
-
-
-
-
-## Game Flow
-Player starts in forest
-
-Pond to the left, must move right
-
-To the right is a hill, player jumps to traverse it (“jump” taught)
-
-Player encounters castle - door’s shut and locked
-
-There’s a window within jump height, and a rock on the ground
-
-Player picks up rock and throws at glass (“throw” taught)
-
-… etc.
-
-(example)
+> Uma das partes mais interessantes do jogo se dá antes mesmo da batalha: a seleção das peças.
+Como cada peça possui atributos diferentes, a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contra balencear as escolhas do adversário.
 
 
 # Desenvolvimento
@@ -177,127 +144,92 @@ InteractableButton
 
 # Gráficos
 ## Estilo
-What kinds of colors will you be using? Do you have a limited palette to work with? A post-processed HSV map/image? Consistency is key for immersion.
-
-What kind of graphic style are you going for? Cartoony? Pixel-y? Cute? How, specifically? Solid, thick outlines with flat hues? Non-black outlines with limited tints/shades? Emphasize smooth curvatures over sharp angles? Describe a set of general rules depicting your style here.
-
-> Well-designed feedback, both good (e.g. leveling up) and bad (e.g. being hit), are great for teaching the player how to play through trial and error, instead of scripting a lengthy tutorial. What kind of visual feedback are you going to use to let the player know they’re interacting with something? That they *can* interact with something?
+O estilo escolhido foi cartoonizado. Isso permitiu a criação de _sprites_ mais facilmente e também foi útil para atenuar um possível desconforto do jogador com o combate.
 
 
 ## Gráficos Necessários
-Characters
 
-Human-like
+## 1. Cabeças
 
-Goblin (idle, walking, throwing)
+   * Modelo 1
 
-Guard (idle, walking, stabbing)
+![cabeca](../character/parts/heads/presser/head.png)
 
-Prisoner (walking, running)
+   * Modelo 2
 
-Other
+![cabeca](../character/parts/heads/thinker/head.png)
 
-Wolf (idle, walking, running)
+   * Modelo 3
 
-Giant Rat (idle, scurrying)
-
-Blocks
-
-Dirt
-
-Dirt/Grass
-
-Stone Block
-
-Stone Bricks
-
-Tiled Floor
-
-Weathered Stone Block
-
-Weathered Stone Bricks
-
-Ambient
-
-Tall Grass
+![cabeca](../character/parts/heads/wood/head.png)
 
 
-Rodent (idle, scurrying)
+## 2. Torsos
 
-Torch
+   * Modelo 1
 
-Armored Suit
+![torso](../character/parts/torsos/presser/torso.png)
 
-Chains (matching Weathered Stone Bricks)
+   * Modelo 2
 
-Blood stains (matching Weathered Stone Bricks)
+![torso](../character/parts/torsos/thinker/torso.png)
 
+   * Modelo 3
 
-Other
-
-Chest
-
-Door (matching Stone Bricks)
-
-Gate
+![torso](../character/parts/torsos/wood/torso.png)
 
 
-Button (matching Weathered Stone Bricks)
+## 3. Pernas
 
-(example)
+   * Modelo 1
+
+![perna](../character/parts/legs/presser/leg.png)
+
+   * Modelo 2
+
+![perna](../character/parts/legs/thinker/leg.png)
+
+   * Modelo 3
+
+![perna](../character/parts/legs/wood/leg.png)
 
 
+## 4. Braços
 
-(Note : If you’re soloing you might not need to define this part, as you can just use the Derived Classes + Themes section as a reference. It’s up to you.)
+   * Modelo 1
+
+![braços](../character/parts/arms/presser/upper_arm.png)
+
+![braços](../character/parts/arms/presser/upper_arm.png)
+
+   * Modelo 2
+
+![braços](../character/parts/arms/thinker/upper_arm.png)
+
+![braços](../character/parts/arms/thinker/upper_arm.png)
+
+   * Modelo 3
+
+![braços](../character/parts/arms/wood/upper_arm.png)
+
+![braços](../character/parts/arms/wood/upper_arm.png)
 
 
 # Música e Sons
 ## Estilo
-> Again, consistency is key. Define that consistency here. What kind of instruments do you want to use in your music? Any particular tempo, key? Influences, genre? Mood?
-
-Stylistically, what kind of sound effects are you looking for? Do you want to exaggerate actions with lengthy, cartoony sounds (e.g. mario’s jump), or use just enough to let the player know something happened (e.g. mega man’s landing)? Going for realism? You can use the music style as a bit of a reference too.
-	
-> Remember, auditory feedback should stand out from the music and other sound effects so the player hears it well. Volume, panning, and frequency/pitch are all important aspects to consider in both music and sounds - so plan accordingly!
+> Os sons implementados foram básicos, afim de criar um experiência mais sinestésica para o jogador. O som no menu de seleção e ao acertar o golpe são importantes, para passar uma maior idéia de ação ao jogador.
 
 
 ## Sons Necessários
-Effects
+_plop_ => menu de seleção
 
-Soft Footsteps (dirt floor)
+_player ready_ => voice over indicando status do jogador no menu de seleção
 
-Sharper Footsteps (stone floor)
+_clang_ => efeito ao acertar ataque
 
-Soft Landing (low vertical velocity)
+_fight_ => voice over para indicar início da partida
 
-Hard Landing (high vertical velocity)
-
-Glass Breaking
-
-Chest Opening
-
-Door Opening
-
-Feedback
-
-Relieved “Ahhhh!” (health)
-
-Shocked “Ooomph!” (attacked)
-
-Happy chime (extra life)
-
-Sad chime (died)
-
-(example)
-
-## Música necessária
-Slow-paced, nerve-racking “forest” track
-Exciting “castle” track
-Creepy, slow “dungeon” track
-Happy ending credits track
-Rick Astley’s hit #1 single “Never Gonna Give You Up”
-(example)
-
-(Note : Again, if you’re soloing you might be able to / want to skip this section. It’s up to you.)
+_winner_ => efeito para indicar fim da partida
 
 # Cronograma
 (what is a schedule, i don’t even. list is good enough, right? if not add some dates i guess)
