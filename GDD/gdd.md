@@ -47,26 +47,30 @@ Mathias Menck, NUSP: 4343470
 # Game Design
 
 ## Resumo
-> Batalha de Robos: Dois robos se enfrentam em uma arena, existindo duas condições de vitória: Empurrar o adversário para fora da arena ou deixar seu hp em 0.
+> Batalha de Robôs: Dois robôs se enfrentam em uma arena, existindo duas condições de vitória: Empurrar o adversário para fora da arena ou deixar seu hp em 0.
 
 ## Gameplay
 > O jogo baseia-se nos famosos brawlers 2D mas com características únicas, notadamente, personagens customizáveis, permitindo muita variabilidade de habilidade e a mecânica de _sumô_, com a eliminação por sair da área de combate e a inexistência da capacidade de saltar.
 
 ## Mindset
-> A inteção do jogo é ser frenético, com partidas muito rápidas. A penalidade por saída da área de combate exige enfrentamento entre os jogadores, fazendo com que o embate seja inevitável e exista pouco espaço para deliberações. Além disso, enfase especial foi dada na montagem dos robos, permitindo que, aliada com tempo curto de partida, muitos batalhas em sequencia ocorram, baseadas na variabildiade de poderes e na sensação de _revanche_ criada entre os competidores.
+> A intenção do jogo é ser frenético, com partidas muito rápidas. A penalidade por saída da área de combate exige enfrentamento entre os jogadores, fazendo com que o embate seja inevitável e exista pouco espaço para deliberações. Além disso, ênfase especial foi dada na montagem dos robôs, permitindo que, aliada com tempo curto de partida, muitos batalhas em sequência ocorram, baseadas na variabilidade de poderes e na sensação de _revanche_ criada entre os competidores.
 
 # Técnico
 ## Telas
-Menu de seleção de peças
 
-Combates
+## 1. Menu de seleção de peças
 
-Tela de anúncio do vencedor
+![selec](build.png)
+
+## 2. Combate
+
+![comb](stage.png)
+
 
 ## Controles
 > Os controles possíveis para os jogadores são:
 
-1. Movimentação do robo
+1. Movimentação do robô
 	* esquerda
 	* direita
 
@@ -78,7 +82,7 @@ Tela de anúncio do vencedor
 
 ## Mecânicas
 > Uma das partes mais interessantes do jogo se dá antes mesmo da batalha: a seleção das peças.
-Como cada peça possui atributos diferentes, a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contra balencear as escolhas do adversário.
+Como cada peça possui atributos diferentes, a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contrabalancear as escolhas do adversário.
 
 
 # Desenvolvimento
@@ -217,7 +221,7 @@ O estilo escolhido foi cartoonizado. Isso permitiu a criação de _sprites_ mais
 
 # Música e Sons
 ## Estilo
-> Os sons implementados foram básicos, afim de criar um experiência mais sinestésica para o jogador. O som no menu de seleção e ao acertar o golpe são importantes, para passar uma maior idéia de ação ao jogador.
+> Os sons implementados foram básicos, a fim de criar um experiência mais sinestésica para o jogador. O som no menu de seleção e ao acertar o golpe são importantes, para passar uma maior idéia de ação ao jogador.
 
 
 ## Sons Necessários
@@ -263,3 +267,5 @@ mind the pacing, let the player play between lessons
 design sounds
 design music
 (example)
+
+
