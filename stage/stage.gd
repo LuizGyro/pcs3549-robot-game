@@ -13,7 +13,8 @@ func _ready():
 	place_character(p2, screen_size.x * .75)
 	p1.set_physics_process(true)
 	p2.set_physics_process(true)
-	play_sound("fight")		
+	play_sound("fight")	
+	play_sound("track")	
 	set_process_input(false)
 
 func play_sound(fx):
@@ -22,6 +23,8 @@ func play_sound(fx):
 		sound.stream = load("res://assets/sound/winner.wav")
 	if fx == "fight":
 		sound.stream = load("res://assets/sound/fight.wav")
+	if fx == "track":
+		sound.stream = load("res://assets/sound/track.wav")
 	self.add_child(sound)
 	sound.play()
 
