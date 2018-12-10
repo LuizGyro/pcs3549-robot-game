@@ -24,7 +24,8 @@ func _ready():
 	pushbox.character = self
 	
 	set_physics_process(false)
-	
+
+
 func play_sound(fx):
 	var sound = AudioStreamPlayer2D.new()
 	self.add_child(sound)
@@ -33,6 +34,9 @@ func play_sound(fx):
 	if fx == "squeak":
 		sound.stream = load("res://assets/sound/squeak.wav")
 	sound.play()
+	
+	yield(sound, "finished")
+	sound.queue_free()
 
 
 func build_body():
@@ -133,8 +137,10 @@ func _physics_process(delta):
 					/ (mass + other.mass)
 	
 	position.x += final_speed * delta
-
-	if Input.is_action_just_pressed(player_name + "_attack"):
+	
+	if Input.is_action_just_pressed(player_name + "_weak_left"):
+        $Torso/LeftArm/Arm.weak_attack()
+	if Input.is_action_just_pressed(player_name + "_weak_right"):
         $Torso/RightArm/Arm.weak_attack()
 	
 	# Lose condition

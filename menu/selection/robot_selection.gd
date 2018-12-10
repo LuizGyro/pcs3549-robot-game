@@ -32,7 +32,7 @@ func _ready():
 	$Characters.add_child(player2)
 	
 func play_sound(fx):
-	var sound = AudioStreamPlayer2D.new()
+	var sound = AudioStreamPlayer.new()
 	self.add_child(sound)
 	if fx == "plop":
 		sound.stream = load("res://assets/sound/plop.wav")
@@ -41,6 +41,9 @@ func play_sound(fx):
 	elif fx == "p2_ready":
 		sound.stream = load("res://assets/sound/p2_ready.wav")
 	sound.play()
+	
+	yield(sound, "finished")
+	sound.queue_free()
 
 
 func toggle_ready(player):
