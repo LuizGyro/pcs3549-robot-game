@@ -25,12 +25,18 @@ func weak_attack():
 
 
 func attack(name):
+	if hp <= 0:
+		return
+	
 	if !attacking:
 		attacking = true
 		animation.play(str(name + "_attack"))
 
 
 func shield(s):
+	if hp <= 0:
+		return
+	
 	if shielding != s:
 		shielding = s
 		if shielding:
@@ -48,7 +54,12 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_Hurtbox_area_entered(area):
+	if get_parent().get_parent().get_parent().is_a_parent_of(area):
+		return
+	
 	hp -= area.damage / 10
+	if hp <= 0:
+		$Sprite.hide()
 	
 	emit_signal("damaged", float(hp) / max_hp * 100)
 	
