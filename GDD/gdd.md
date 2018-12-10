@@ -35,9 +35,9 @@ Mathias Menck, NUSP: 4343470
 	* Música necessária
 
 
-#Postmortem
+# Postmortem
 > Iniciamos o projeto com discussões sobre que tipo de jogo iríamos desenvolver, passando por várias idéias vindas do vídeo dado como base. Eventualmente, em uma discussão em grupo, notamos que das ideias que tinhamos a que mais se destacou foi a de montar o personagem do jogador, e resolvemos que o conceito básico do jogo revolveria nesse conceito. A partir disso e de um gosto pessoal por jogos de luta, decidimos no jogo final.
-> Usamos a Godot para desenvolver o jogo tanto pela recomendação do professor quanto por ja termos experiência com a ferramenta. Isso foi um acerto, visto que a qualidade modular de projetos na Godot coube bem com a ideia de um robo montável pelo jogador, com cada peça específica sendo a própria subclasse.
+> Usamos a Godot para desenvolver o jogo tanto pela recomendação do professor quanto por ja termos experiência com a ferramenta. Isso foi um acerto, visto que a qualidade modular de projetos na Godot coube bem com a ideia de um robô montável pelo jogador, com cada peça específica sendo a própria subclasse.
 > Tivemos problemas com algumas interações necessárias, como um robô empurrar o outro, mas conseguimos corrigí-las.
 > O maior inimigo do desenvolvimento do projeto, foi, no fim, a falta de tempo. Devido ao período em que desenvolvemos o projeto, quando quase todos os componentes do grupo estavam em um período de entrega e provas para várias outras matérias, acabamos dedicando ao jogo menos tempo que o planejado. Com isso não conseguímos fazer mais do que 3 "sets" de peças para o jogador usar, e os backgrounds do jogo são simples e monocromáticos. Também não conseguimos balancear propriamente os atributos de cada peça ou outras partes do jogo, como o tamanho do estágio.
 > Apesar disso acreditamos que conseguimos criar o jogo proposto inicialmente, mesmo que num estado mais simples e com menos conteúdo que inicialmente previsto.
@@ -45,7 +45,7 @@ Mathias Menck, NUSP: 4343470
 # Game Design
 
 ## Resumo
-> Batalha de Robôs: Dois robôs se enfrentam em uma arena, existindo duas condições de vitória: Empurrar o adversário para fora da arena ou deixar seu hp em 0.
+> Batalha de Robôs: Dois robôs se enfrentam em uma arena, existindo duas condições de vitória: Empurrar o adversário para fora da arena ou deixar seus pontos de vida em 0.
 
 ## Gameplay
 > O jogo baseia-se nos famosos brawlers 2D mas com características únicas, notadamente, personagens customizáveis, permitindo muita variabilidade de habilidade e a mecânica de _sumô_, com a eliminação por sair da área de combate e a inexistência da capacidade de saltar.
