@@ -26,13 +26,10 @@ Mathias Menck, NUSP: 4343470
 	* Telas
 	* Controles
 	* Mecânicas
-5. Desenvolvimento
-	* Classes Abstratas
-	* Classes Derivadas
-6. Gráficos
+5. Gráficos
 	* Estilo
 	* Gráficos necessários
-7. Música e Sons
+6. Música e Sons
 	* Estilo
 	* Sons necessários
 	* Música necessária
@@ -84,67 +81,6 @@ Mathias Menck, NUSP: 4343470
 ## Mecânicas
 > Uma das partes mais interessantes do jogo se dá antes mesmo da batalha: a seleção das peças.
 Como cada peça possui atributos diferentes (peso, dano causado, pontos de vida...), a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contrabalancear as escolhas do adversário. Ainda mais considerando que, nas peças disponíveis, as mais pesadas proporcionam causar mais dano, mas as mais leves tem movimento mais rápido e ataques mais velozes.
-
-
-# Desenvolvimento
-## Classes Abstratas
-BasePhysics
-
-BasePlayer
-
-BaseEnemy
-
-BaseObject
-
-BaseObstacle
-
-BaseInteractable
-
-(example)
-
-
-## Classes Derivadas
-BasePlayer
-
-PlayerMain
-
-PlayerUnlockable
-
-BaseEnemy
-
-EnemyWolf
-
-EnemyGoblin
-
-EnemyGuard (may drop key)
-
-EnemyGiantRat
-
-EnemyPrisoner
-
-BaseObject
-
-ObjectRock (pick-up-able, throwable)
-
-ObjectChest (pick-up-able, throwable, spits gold coins with key)
-
-ObjectGoldCoin (cha-ching!)
-
-ObjectKey (pick-up-able, throwable)
-
-BaseObstacle
-
-ObstacleWindow (destroyed with rock)
-
-ObstacleWall
-
-ObstacleGate (watches to see if certain buttons are pressed)
-
-BaseInteractable
-
-InteractableButton
-
-(example)
 
 
 # Gráficos
