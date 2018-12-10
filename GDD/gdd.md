@@ -13,6 +13,10 @@ Luiz Girotto, NUSP: 8941189
 
 Mathias Menck, NUSP: 4343470
 
+# Link para o repositório:
+
+[https://github.com/LuizGyro/pcs3549-robot-game](https://github.com/LuizGyro/pcs3549-robot-game)
+
 # Índice
 1. Índice
 
