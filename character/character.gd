@@ -19,12 +19,18 @@ func _ready():
 	
 	pushbox = $Torso/Pushbox
 	hurtbox = $Torso/Hurtbox
+	var left_arm = $Torso/LeftArm/Arm
+	var right_arm = $Torso/RightArm/Arm
 	
 	hurtbox.connect("area_entered", self, "_on_Torso_area_entered")
 	pushbox.character = self
 	
-	set_physics_process(false)
+	left_arm.connect("damaged", self, "_arm_damaged", ["LeftArm"])
+	right_arm.connect("damaged", self, "_arm_damaged", ["RightArm"])
 	
+	set_physics_process(false)
+
+
 func play_sound(fx):
 	var sound = AudioStreamPlayer2D.new()
 	self.add_child(sound)
@@ -33,6 +39,9 @@ func play_sound(fx):
 	if fx == "squeak":
 		sound.stream = load("res://assets/sound/squeak.wav")
 	sound.play()
+	
+	yield(sound, "finished")
+	sound.queue_free()
 
 
 func build_body():
@@ -102,8 +111,14 @@ func get_height():
 
 
 func _physics_process(delta):
+	var left_arm = $Torso/LeftArm/Arm
+	var right_arm = $Torso/RightArm/Arm
 	
-	shielding = Input.is_action_pressed(player_name + "_shield")
+	var attacking = left_arm.attacking or right_arm.attacking
+	shielding = Input.is_action_pressed(player_name + "_shield") and !attacking
+	
+	left_arm.shield(shielding)
+	right_arm.shield(shielding)
 	
 	speed = 0
 	if Input.is_action_pressed(player_name + "_left") and not shielding:
@@ -133,8 +148,10 @@ func _physics_process(delta):
 					/ (mass + other.mass)
 	
 	position.x += final_speed * delta
-
-	if Input.is_action_just_pressed(player_name + "_attack"):
+	
+	if Input.is_action_just_pressed(player_name + "_weak_left") and !shielding:
+        $Torso/LeftArm/Arm.weak_attack()
+	if Input.is_action_just_pressed(player_name + "_weak_right") and !shielding:
         $Torso/RightArm/Arm.weak_attack()
 	
 	# Lose condition
@@ -156,3 +173,7 @@ func _on_Torso_area_entered(area):
 	
 	if $Torso.hp <= 0:
 		emit_signal("died", player_name)
+
+
+func _arm_damaged(damage, name):
+	emit_signal("hp_modified", damage, player_name, name)

@@ -15,22 +15,17 @@ Mathias Menck, NUSP: 4343470
 
 # Índice
 1. Índice
-2. Game Design
+
+2. Postmortem
+
+3. Game Design
 	* Resumo
 	* Gameplay
 	* Mindset
-3. Técnico
+4. Técnico
 	* Telas
 	* Controles
 	* Mecânicas
-4. Design da Fase
-	* Temas
-		* Ambiência
-		* Objetos
-			* Ambiente
-			* Interativos
-		* Desafios
-	* Game Flow
 5. Desenvolvimento
 	* Classes Abstratas
 	* Classes Derivadas
@@ -41,8 +36,14 @@ Mathias Menck, NUSP: 4343470
 	* Estilo
 	* Sons necessários
 	* Música necessária
-8. Cronograma
 
+
+#Postmortem
+> Iniciamos o projeto com discussões sobre que tipo de jogo iríamos desenvolver, passando por várias idéias vindas do vídeo dado como base. Eventualmente, em uma discussão em grupo, notamos que das ideias que tinhamos a que mais se destacou foi a de montar o personagem do jogador, e resolvemos que o conceito básico do jogo revolveria nesse conceito. A partir disso e de um gosto pessoal por jogos de luta, decidimos no jogo final.
+> Usamos a Godot para desenvolver o jogo tanto pela recomendação do professor quanto por ja termos experiência com a ferramenta. Isso foi um acerto, visto que a qualidade modular de projetos na Godot coube bem com a ideia de um robo montável pelo jogador, com cada peça específica sendo a própria subclasse.
+> Tivemos problemas com algumas interações necessárias, como um robô empurrar o outro, mas conseguimos corrigí-las.
+> O maior inimigo do desenvolvimento do projeto, foi, no fim, a falta de tempo. Devido ao período em que desenvolvemos o projeto, quando quase todos os componentes do grupo estavam em um período de entrega e provas para várias outras matérias, acabamos dedicando ao jogo menos tempo que o planejado. Com isso não conseguímos fazer mais do que 3 "sets" de peças para o jogador usar, e os backgrounds do jogo são simples e monocromáticos. Também não conseguimos balancear propriamente os atributos de cada peça ou outras partes do jogo, como o tamanho do estágio.
+> Apesar disso acreditamos que conseguimos criar o jogo proposto inicialmente, mesmo que num estado mais simples e com menos conteúdo que inicialmente previsto.
 
 # Game Design
 
@@ -53,7 +54,7 @@ Mathias Menck, NUSP: 4343470
 > O jogo baseia-se nos famosos brawlers 2D mas com características únicas, notadamente, personagens customizáveis, permitindo muita variabilidade de habilidade e a mecânica de _sumô_, com a eliminação por sair da área de combate e a inexistência da capacidade de saltar.
 
 ## Mindset
-> A intenção do jogo é ser frenético, com partidas muito rápidas. A penalidade por saída da área de combate exige enfrentamento entre os jogadores, fazendo com que o embate seja inevitável e exista pouco espaço para deliberações. Além disso, ênfase especial foi dada na montagem dos robôs, permitindo que, aliada com tempo curto de partida, muitos batalhas em sequência ocorram, baseadas na variabilidade de poderes e na sensação de _revanche_ criada entre os competidores.
+> A intenção do jogo é ser frenético, com partidas muito rápidas. A penalidade por saída da área de combate exige enfrentamento entre os jogadores, fazendo com que o embate seja inevitável e exista pouco espaço e tempo para deliberações. Além disso, ênfase especial foi dada na montagem dos robôs, permitindo que, aliada com tempo curto de partida, muitos batalhas em sequência ocorram, baseadas na variabilidade de poderes e na sensação de _revanche_ criada entre os competidores.
 
 # Técnico
 ## Telas
@@ -82,7 +83,7 @@ Mathias Menck, NUSP: 4343470
 
 ## Mecânicas
 > Uma das partes mais interessantes do jogo se dá antes mesmo da batalha: a seleção das peças.
-Como cada peça possui atributos diferentes, a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contrabalancear as escolhas do adversário.
+Como cada peça possui atributos diferentes (peso, dano causado, pontos de vida...), a montagem do robô pode ser visto como um jogo em si, já que é possível definir estratégias diferentes baseadas nas peças que são escolhidas e até mesmo existir um _meta game_ entre os jogadores, para tentar contrabalancear as escolhas do adversário. Ainda mais considerando que, nas peças disponíveis, as mais pesadas proporcionam causar mais dano, mas as mais leves tem movimento mais rápido e ataques mais velozes.
 
 
 # Desenvolvimento
@@ -148,7 +149,7 @@ InteractableButton
 
 # Gráficos
 ## Estilo
-O estilo escolhido foi cartoonizado. Isso permitiu a criação de _sprites_ mais facilmente e também foi útil para atenuar um possível desconforto do jogador com o combate.
+O estilo escolhido foi um estilo simples e cartunizado. Isso permitiu a criação de _sprites_ mais facil e rápidamente e também foi útil para atenuar um possível desconforto do jogador com o combate.
 
 
 ## Gráficos Necessários
@@ -204,19 +205,19 @@ O estilo escolhido foi cartoonizado. Isso permitiu a criação de _sprites_ mais
 
 ![braços](../character/parts/arms/presser/upper_arm.png)
 
-![braços](../character/parts/arms/presser/upper_arm.png)
+![braços](../character/parts/arms/presser/lower_arm.png)
 
    * Modelo 2
 
 ![braços](../character/parts/arms/thinker/upper_arm.png)
 
-![braços](../character/parts/arms/thinker/upper_arm.png)
+![braços](../character/parts/arms/thinker/lower_arm.png)
 
    * Modelo 3
 
 ![braços](../character/parts/arms/wood/upper_arm.png)
 
-![braços](../character/parts/arms/wood/upper_arm.png)
+![braços](../character/parts/arms/wood/lower_arm.png)
 
 
 # Música e Sons
@@ -235,37 +236,6 @@ _fight_ => voice over para indicar início da partida
 
 _winner_ => efeito para indicar fim da partida
 
-# Cronograma
-(what is a schedule, i don’t even. list is good enough, right? if not add some dates i guess)
 
-
-develop base classes
-base entity
-base player
-base enemy
-base block
-base app state
-game world
-menu world
-develop player and basic block classes
-physics / collisions
-find some smooth controls/physics
-develop other derived classes
-blocks
-moving
-falling
-breaking
-cloud
-enemies
-soldier
-rat
-etc.
-design levels
-introduce motion/jumping
-introduce throwing
-mind the pacing, let the player play between lessons
-design sounds
-design music
-(example)
 
 
